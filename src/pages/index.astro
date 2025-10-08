@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import { sanityClient } from 'sanity:client';
+import imageUrlBuilder from '@sanity/image-url';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import TradingViewWidget from '../components/TradingViewWidget.astro';
+import NewsWidget from '../components/NewsWidget.astro';
+
+interface Post {
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  image?: SanityImageSource;
+}
+
+const posts = await sanityClient.fetch<Post[]>(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...10]`);
+
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source: SanityImageSource) {
+	return builder.image(source);
+}
+---
+
+<Layout title="Agnostic News - Latest Articles" description="Latest Articles">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+		<div class="md:col-span-2 flex flex-col gap-4">
+			{posts.map(article => (
+				<NewsCard
+					title={article.title}
+					time={new Date(article.publishedAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute:'2-digit'})}
+					imageUrl={article.image ? urlFor(article.image).width(300).url() : undefined}
+					slug={article.slug.current}
+				/>
+			))}
+		</div>
+		<aside>
+			<NewsWidget />
+			<TradingViewWidget />
+		</aside>
+	</div>
+</Layout>

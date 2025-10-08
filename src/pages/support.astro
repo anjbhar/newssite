@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+export const prerender = true;
+---
+
+<Layout title="Support Us">
+    <div class="relative">
+        
+        <div class="max-w-2xl mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Support Agnostic News</h1>
+            <p class="mb-8 text-lg">If you find our service valuable, please consider supporting us through a donation. Your contributions help us maintain and improve our platform.</p>
+            
+            <div class="space-y-6">
+                <!-- Bitcoin -->
+                <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="/icons/bitcoin.svg" alt="Bitcoin logo" class="h-12 w-12">
+                        <div class="text-left">
+                            <h2 class="text-2xl font-semibold">Bitcoin (BTC)</h2>
+                            <p class="text-sm break-all font-mono">bc1qsgkr7p9ckyw4jh3mum8ey7aq3zxnsv5cywh443</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    </button>
+                </div>
+                <!-- Ethereum -->
+                <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="/icons/ethereum.svg" alt="Ethereum logo" class="h-12 w-12">
+                        <div class="text-left">
+                            <h2 class="text-2xl font-semibold">Ethereum (ETH)</h2>
+                            <p class="text-sm break-all font-mono">0x9cA3F055178B003db74C87086F98Aed255BC7446</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-address="0x9b46c5B3A2C8d8AF6C7B2E5D1E4E6E2A3aD2Eba9">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    </button>
+                </div>
+                <!-- Litecoin -->
+                <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="/icons/litecoin.svg" alt="Litecoin logo" class="h-12 w-12">
+                        <div class="text-left">
+                            <h2 class="text-2xl font-semibold">Litecoin (LTC)</h2>
+                            <p class="text-sm break-all font-mono">ltc1qcra5zzjza58al532t6w9kapqrw0s0cvm3jvqek</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-address="ltc1qg3z4y2hyns9g2f2w0v2n2z9z9r8x8v8c2g7f9q">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    </button>
+                </div>
+                <!-- Solana -->
+                <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="/icons/solana.svg" alt="Solana logo" class="h-12 w-12">
+                        <div class="text-left">
+                            <h2 class="text-2xl font-semibold">Solana (SOL)</h2>
+                            <p class="text-sm break-all font-mono">BpkbUoGR4rxqg8bwAkqaazqy9o8cweT2EBB62AFA6F75</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-address="So11111111111111111111111111111111111111112">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script is:inline>
+    const copyButtons = document.querySelectorAll('.copy-btn');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const address = button.dataset.address;
+            navigator.clipboard.writeText(address).then(() => {
+                // visual feedback
+                const originalIcon = button.innerHTML;
+                button.innerHTML = `
+                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                `;
+                setTimeout(() => {
+                    button.innerHTML = originalIcon;
+                }, 2000);
+            });
+        });
+    });
+</script>
