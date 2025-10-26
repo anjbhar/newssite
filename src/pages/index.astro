@@ -12,6 +12,8 @@ interface Post {
   slug: { current: string };
   publishedAt: string;
   image?: SanityImageSource;
+  author?: string;
+  category?: string;
 }
 
 const posts = await sanityClient.fetch<Post[]>(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...10]`);
@@ -31,6 +33,8 @@ function urlFor(source: SanityImageSource) {
 					time={new Date(article.publishedAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute:'2-digit'})}
 					imageUrl={article.image ? urlFor(article.image).width(300).url() : undefined}
 					slug={article.slug.current}
+					author={article.author}
+					category={article.category}
 				/>
 			))}
 		</div>
